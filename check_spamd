@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 import optparse
 import subprocess
@@ -55,19 +55,19 @@ else:
         cmd.append('-S')
 
 if options.verbose:
-    print '#', ' '.join(cmd)
+    print('#', ' '.join(cmd))
 
 process = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 (stdout, stderr) = process.communicate()
 
 # Special-case the "OK" case to also print the output of spamc.
 if process.returncode == 0:
-    print stdout,
+    print(stdout)
     sys.exit(RC_OK)
 else:
     (message, rc) = SPAMC_RCS[process.returncode]
-    print message
+    print(message)
     if stderr != '':
-        print stderr
+        print(stderr)
         sys.exit(RC_CRIT)
     sys.exit(rc)

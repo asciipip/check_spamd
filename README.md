@@ -8,8 +8,8 @@ The script makes use of `spamc`'s "keep-alive" check and basically
 just serves as a wrapper to translate the result of that check into
 Nagios-speak.
 
-You need to have Python 2.4 or later installed, as well as
-SpamAssassin's `spamc` script.
+You need to have Python installed, as well as SpamAssassin's `spamc`
+script.
 
 
 Usage
