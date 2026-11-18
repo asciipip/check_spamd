@@ -57,7 +57,7 @@ else:
 if options.verbose:
     print('#', ' '.join(cmd))
 
-process = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+process = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, encoding='utf8')
 (stdout, stderr) = process.communicate()
 
 # Special-case the "OK" case to also print the output of spamc.
